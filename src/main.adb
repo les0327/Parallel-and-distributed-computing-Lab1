@@ -8,7 +8,7 @@ procedure Main is
    CPU1 : CPU_Range := 0;
    CPU2 : CPU_Range := 1;
    CPU3 : CPU_Range := 2;
-   N    : Integer   := 45;
+   N    : Integer   := 1000;
 
 
    package new_data is new data(Size => N);
@@ -19,7 +19,7 @@ procedure Main is
       pragma Task_Name("Task 1");
       pragma Priority(1);
       pragma CPU(CPU1);
-      pragma Storage_Size(2000);
+      pragma Storage_Size(1000000000);
    end Task1;
 
    --Specification of Task 2 for F2
@@ -27,7 +27,7 @@ procedure Main is
       pragma Task_Name("Task 2");
       pragma Priority(5);
       pragma CPU(CPU2);
-      pragma Storage_Size(3000);
+      pragma Storage_Size(1000000000);
    end Task2;
 
    --Specification of Task 3 for F3
@@ -35,7 +35,7 @@ procedure Main is
       pragma Task_Name("Task 3");
       pragma Priority(10);
       pragma CPU(CPU1);
-      pragma Storage_Size(3000);
+      pragma Storage_Size(100000000);
    end Task3;
 
    task body Task1 is
